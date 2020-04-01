@@ -1,4 +1,4 @@
-package com.onlinemarket.services;
+package com.onlinemarket;
 
 public class Main {
     public static void main(String[] args) {
