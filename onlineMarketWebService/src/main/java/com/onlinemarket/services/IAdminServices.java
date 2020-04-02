@@ -1,11 +1,11 @@
 package com.onlinemarket.services;
 
-import com.onlinemarket.models.IUser;
+import com.onlinemarket.models.User;
 
 import java.util.List;
 
-public interface IAdminServices {
+public interface IAdminServices extends IGeneralServices{
 
-  public List<IUser> findAll();
+  public List<User> findAll();
 
 }

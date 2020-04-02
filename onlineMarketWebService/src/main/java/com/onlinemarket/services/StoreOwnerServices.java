@@ -1,11 +1,12 @@
 package com.onlinemarket.services;
 
 import com.onlinemarket.data.IUserDA;
-import com.onlinemarket.models.IUser;
+import com.onlinemarket.models.User;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
-
-public class StoreOwnerServices implements IGeneralServices, IStoreOwnerServices {
+@Service
+public class StoreOwnerServices implements IStoreOwnerServices {
 
   @Autowired
   IUserDA da;
@@ -15,8 +16,9 @@ public class StoreOwnerServices implements IGeneralServices, IStoreOwnerServices
     return null;
   }
 
+
   @Override
-  public Boolean saveUser(IUser user) {
+  public Boolean saveUser(User user) {
     return null;
   }
 

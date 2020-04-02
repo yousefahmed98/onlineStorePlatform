@@ -12,9 +12,6 @@ import org.springframework.web.bind.annotation.RestController;
 public class StoreOwnerController {
 
   @Autowired
-  IGeneralServices generalService;
-
-  @Autowired
   IStoreOwnerServices storeOwnerServices;
 
   @RequestMapping(value = "/loginStoreOwner",method = RequestMethod.GET)

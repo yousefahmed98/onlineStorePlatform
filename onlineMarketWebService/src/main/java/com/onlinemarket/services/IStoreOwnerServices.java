@@ -1,4 +1,4 @@
 package com.onlinemarket.services;
 
-public interface IStoreOwnerServices {
+public interface IStoreOwnerServices extends IGeneralServices{
 }

@@ -13,8 +13,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 public class AdminController {
-  @Autowired
-  IGeneralServices generalService;
+
   @Autowired
   IAdminServices adminService;
 

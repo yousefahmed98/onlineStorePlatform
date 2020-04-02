@@ -1,4 +1,4 @@
 package com.onlinemarket.services;
 
-public interface INormalUserServices {
+public interface INormalUserServices extends IGeneralServices{
 }
