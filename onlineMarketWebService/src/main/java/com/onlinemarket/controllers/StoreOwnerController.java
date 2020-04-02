@@ -5,6 +5,7 @@ import com.onlinemarket.services.IStoreOwnerServices;
 import com.onlinemarket.services.IGeneralServices;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
@@ -16,11 +17,11 @@ public class StoreOwnerController {
   @Autowired
   IStoreOwnerServices storeOwnerServices;
 
-  @RequestMapping("/loginStoreOwner")
+  @RequestMapping(value = "/loginStoreOwner",method = RequestMethod.GET)
   public Boolean login(String email, String pass) {
     return null;
   }
-  @RequestMapping("/registerStoreOwner")
+  @RequestMapping(value = "/registerStoreOwner",method = RequestMethod.POST)
   public Boolean register(IUser user) {
     return null;
   }

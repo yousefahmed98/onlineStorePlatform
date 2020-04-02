@@ -4,11 +4,13 @@ import java.util.List;
 
 import com.onlinemarket.models.IUser;
 import com.onlinemarket.data.IUserDA;
+import org.springframework.beans.factory.annotation.Autowired;
 
 
 public class AdminServices implements IGeneralServices, IAdminServices {
 
-  private IUserDA da;
+  @Autowired
+  IUserDA da;
 
   @Override
   public Boolean findUser(String email, String pass) {
