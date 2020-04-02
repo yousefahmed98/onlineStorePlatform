@@ -1,10 +1,11 @@
 package com.onlinemarket.services;
 
 import com.onlinemarket.data.IUserDA;
-import com.onlinemarket.models.IUser;
+import com.onlinemarket.models.User;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
-
+@Service
 public class UserServices implements IGeneralServices, INormalUserServices {
 
   @Autowired
@@ -16,8 +17,15 @@ public class UserServices implements IGeneralServices, INormalUserServices {
   }
 
   @Override
-  public Boolean saveUser(IUser user) {
-    return null;
+  public Boolean saveUser(User user){
+    if(UserDA.findById(user.getEmail()) != null)
+    {
+      UserDA.save(user);
+      return true;
+    }
+    else{
+      return false;
+    }
   }
 
 }

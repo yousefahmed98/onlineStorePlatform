@@ -1,12 +1,12 @@
 package com.onlinemarket.services;
 
-import com.onlinemarket.models.IUser;
+import com.onlinemarket.models.User;
 
 
 public interface IGeneralServices {
 
   public Boolean findUser(String email, String pass);
 
-  public Boolean saveUser(IUser user);
+  public Boolean saveUser(User user);
 
 }

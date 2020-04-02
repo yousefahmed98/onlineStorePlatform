@@ -2,7 +2,7 @@ package com.onlinemarket.controllers;
 
 import java.util.List;
 
-import com.onlinemarket.models.IUser;
+import com.onlinemarket.models.User;
 import com.onlinemarket.services.IGeneralServices;
 import com.onlinemarket.services.IAdminServices;
 
@@ -23,11 +23,11 @@ public class AdminController {
     return null;
   }
   @RequestMapping(value ="/registerAdmin",method = RequestMethod.POST)
-  public Boolean register(IUser user) {
+  public Boolean register(User user) {
     return null;
   }
   @RequestMapping(value = "/findAll",method = RequestMethod.GET)
-  public List<IUser> findAll() {
+  public List<User> findAll() {
   return null;
   }
 
