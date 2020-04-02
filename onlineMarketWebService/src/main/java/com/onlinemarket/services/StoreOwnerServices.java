@@ -1,14 +1,13 @@
 package com.onlinemarket.services;
 
-import java.util.Vector;
-
 import com.onlinemarket.data.IUserDA;
 import com.onlinemarket.models.IUser;
 
 
-public class StoreOwnerServices implements IGeneralService, IStoreOwnerServices {
+public class StoreOwnerServices implements IGeneralServices, IStoreOwnerServices {
 
-  public IUserDA da;
+  private IUserDA da;
+
   @Override
   public Boolean findUser(String email, String pass) {
     return null;

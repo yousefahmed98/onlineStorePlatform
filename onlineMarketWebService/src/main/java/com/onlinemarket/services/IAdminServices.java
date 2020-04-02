@@ -4,7 +4,7 @@ import com.onlinemarket.models.IUser;
 
 import java.util.List;
 
-public interface IAdminService {
+public interface IAdminServices {
 
   public List<IUser> findAll();
 

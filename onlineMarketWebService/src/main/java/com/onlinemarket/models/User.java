@@ -1,8 +1,7 @@
 package com.onlinemarket.models;
 
 
-
-class User  {
+class User {
 
   private String name;
 

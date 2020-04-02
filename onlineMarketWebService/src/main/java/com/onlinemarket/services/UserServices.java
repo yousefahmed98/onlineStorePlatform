@@ -1,21 +1,18 @@
 package com.onlinemarket.services;
 
-import java.util.Vector;
-
 import com.onlinemarket.data.IUserDA;
 import com.onlinemarket.models.IUser;
+import org.springframework.beans.factory.annotation.Autowired;
 
 
+public class UserServices implements IGeneralServices, INormalUserServices {
 
-public class UserServices implements IGeneralService, INormalUserServices {
+  @Autowired
+  IUserDA UserDA;
 
-  public IUserDA da;
-
-    public Vector  mySystemController;
-    public Vector  myIUserDA;
-
+  @Override
   public Boolean findUser(String email, String pass) {
-  return null;
+    return null;
   }
 
   @Override

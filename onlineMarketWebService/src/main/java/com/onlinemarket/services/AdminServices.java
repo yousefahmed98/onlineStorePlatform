@@ -1,24 +1,18 @@
 package com.onlinemarket.services;
 
 import java.util.List;
-import java.util.Vector;
+
 import com.onlinemarket.models.IUser;
 import com.onlinemarket.data.IUserDA;
 
 
-public class AdminServices implements IGeneralService, IAdminService {
+public class AdminServices implements IGeneralServices, IAdminServices {
 
-  public IUserDA da;
+  private IUserDA da;
 
-    public Vector  mySystemController;
-    public Vector  myIUserDA;
-
-  public List<IUser> findAll() {
-  return null;
-  }
-
+  @Override
   public Boolean findUser(String email, String pass) {
-  return null;
+    return null;
   }
 
   @Override
@@ -27,5 +21,8 @@ public class AdminServices implements IGeneralService, IAdminService {
   }
 
 
-
+  @Override
+  public List<IUser> findAll() {
+    return null;
+  }
 }

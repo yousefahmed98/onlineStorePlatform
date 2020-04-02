@@ -1,11 +1,10 @@
 package com.onlinemarket.controllers;
 
 import java.util.List;
-import java.util.Vector;
 
 import com.onlinemarket.models.IUser;
-import com.onlinemarket.services.IGeneralService;
-import com.onlinemarket.services.IAdminService;
+import com.onlinemarket.services.IGeneralServices;
+import com.onlinemarket.services.IAdminServices;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -14,9 +13,9 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 public class AdminController {
   @Autowired
-  IGeneralService generalService;
+  IGeneralServices generalService;
   @Autowired
-  IAdminService adminService;
+  IAdminServices adminService;
 
   @RequestMapping("/loginAdmin")
   public Boolean login(String email, String pass) {
