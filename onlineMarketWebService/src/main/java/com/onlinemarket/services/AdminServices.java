@@ -23,9 +23,8 @@ public class AdminServices implements  IAdminServices {
     return null;
   }
 
-
   @Override
-  public List<User> findAll() {
-    return null;
+  public Iterable<User> findAll() {
+    return da.findAll();
   }
 }

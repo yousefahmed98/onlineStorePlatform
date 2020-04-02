@@ -2,6 +2,7 @@ package com.onlinemarket.controllers;
 
 import java.util.List;
 
+import com.onlinemarket.data.IUserDA;
 import com.onlinemarket.models.User;
 import com.onlinemarket.services.IAdminServices;
 
@@ -26,8 +27,8 @@ public class AdminController {
     return null;
   }
   @RequestMapping(value = "/findAll",method = RequestMethod.GET)
-  public List<User> findAll() {
-  return null;
+  public Iterable<User> findAll() {
+  return adminService.findAll();
   }
 
 
