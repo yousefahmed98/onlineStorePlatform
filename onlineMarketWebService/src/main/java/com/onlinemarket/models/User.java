@@ -1,18 +1,22 @@
 package com.onlinemarket.models;
 
 
+import javax.persistence.Entity;
+import javax.persistence.Id;
+
+@Entity
 public class User {
+
+  @Id
+  private String email;
+
+  private String password;
 
   private String name;
 
   private Integer age;
 
   private Integer ID;
-
-  private String email;
-
-  private String password;
-
 
   public String getName() {
     return name;
