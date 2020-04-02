@@ -1,4 +1,7 @@
 package com.onlinemarket.services;
 
-public interface INormalUserServices {
+import org.springframework.stereotype.Service;
+
+@Service
+public interface INormalUserServices extends IGeneralServices{
 }

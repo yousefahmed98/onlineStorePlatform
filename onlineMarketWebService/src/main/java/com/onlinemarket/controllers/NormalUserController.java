@@ -1,27 +1,29 @@
 package com.onlinemarket.controllers;
 
-import java.util.Vector;
-import com.onlinemarket.models.IUser;
+import com.onlinemarket.models.User;
 import com.onlinemarket.services.INormalUserServices;
-import com.onlinemarket.services.IGeneralService;
+import com.onlinemarket.services.IGeneralServices;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 public class NormalUserController  {
-  @Autowired
-  IGeneralService generalService;
-  @Autowired
-  INormalUserServices normalUserServices;
 
-  @RequestMapping("/loginNormalUser")
-  public Boolean login(String email, String pass) {
-  return null;
+
+  @Autowired
+  INormalUserServices normalUserService;
+
+  @RequestMapping(value = "/loginNormalUser",method = RequestMethod.GET)
+  public Boolean login(@RequestBody String email,@RequestBody String pass) {
+    return normalUserService.findUser(email,pass);
   }
-  @RequestMapping("/registerNormalUser")
-  public Boolean register(IUser user) {
-  return null;
+
+  @RequestMapping(value = "/registerNormalUser",method = RequestMethod.POST)
+  public Boolean register(@RequestBody User user) {
+    return normalUserService.saveUser(user);
   }
 
 }

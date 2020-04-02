@@ -1,21 +1,24 @@
 package com.onlinemarket.services;
 
-import java.util.Vector;
-
 import com.onlinemarket.data.IUserDA;
-import com.onlinemarket.models.IUser;
+import com.onlinemarket.models.User;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
+@Service
+public class StoreOwnerServices implements IStoreOwnerServices {
 
-public class StoreOwnerServices implements IGeneralService, IStoreOwnerServices {
+  @Autowired
+  IUserDA da;
 
-  public IUserDA da;
   @Override
   public Boolean findUser(String email, String pass) {
     return null;
   }
 
+
   @Override
-  public Boolean saveUser(IUser user) {
+  public Boolean saveUser(User user) {
     return null;
   }
 

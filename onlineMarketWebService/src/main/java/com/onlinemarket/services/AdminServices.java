@@ -1,31 +1,30 @@
 package com.onlinemarket.services;
 
 import java.util.List;
-import java.util.Vector;
-import com.onlinemarket.models.IUser;
+
+import com.onlinemarket.models.User;
 import com.onlinemarket.data.IUserDA;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
+@Service
+public class AdminServices implements  IAdminServices {
 
-public class AdminServices implements IGeneralService, IAdminService {
-
-  public IUserDA da;
-
-    public Vector  mySystemController;
-    public Vector  myIUserDA;
-
-  public List<IUser> findAll() {
-  return null;
-  }
-
-  public Boolean findUser(String email, String pass) {
-  return null;
-  }
+  @Autowired
+  IUserDA da;
 
   @Override
-  public Boolean saveUser(IUser user) {
+  public Boolean findUser(String email, String pass) {
     return null;
   }
 
+  @Override
+  public Boolean saveUser(User user) {
+    return null;
+  }
 
-
+  @Override
+  public Iterable<User> findAll() {
+    return da.findAll();
+  }
 }
