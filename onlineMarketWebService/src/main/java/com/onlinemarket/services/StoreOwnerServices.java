@@ -9,17 +9,36 @@ import org.springframework.stereotype.Service;
 public class StoreOwnerServices implements IStoreOwnerServices {
 
   @Autowired
-  IUserDA da;
+  IUserDA UserDA;
 
   @Override
   public Boolean findUser(String email, String pass) {
-    return null;
+    if( UserDA.findById(email) != null){
+      User user=UserDA.findById(email).get();
+      if(user.getPassword().equals(pass)){
+        return true;
+      }
+      else{
+        return false;
+      }
+    }
+    else {
+      return false;
+    }
+
   }
 
 
   @Override
   public Boolean saveUser(User user) {
-    return null;
+    if(UserDA.findById(user.getEmail()) != null)
+    {
+      UserDA.save(user);
+      return true;
+    }
+    else{
+      return false;
+    }
   }
 
 
