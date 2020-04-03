@@ -52,10 +52,11 @@ public class User {
   }
 
   public String getPassword() {
-    return password;
+    return this.password;
   }
 
   public void setPassword(String password) {
     this.password = password;
   }
+
 }
