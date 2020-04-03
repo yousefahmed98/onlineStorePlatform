@@ -1,0 +1,16 @@
+com\onlinemarket\MainController.class
+com\onlinemarket\controllers\NormalUserController.class
+com\onlinemarket\models\User.class
+com\onlinemarket\services\StoreOwnerServices.class
+com\onlinemarket\services\IAdminServices.class
+com\onlinemarket\data\IUserDA.class
+com\onlinemarket\controllers\AdminController.class
+com\onlinemarket\controllers\StoreOwnerController.class
+com\onlinemarket\services\AdminServices.class
+com\onlinemarket\services\UserServices.class
+com\onlinemarket\services\IStoreOwnerServices.class
+com\onlinemarket\models\StoreOwner.class
+com\onlinemarket\models\Admin.class
+com\onlinemarket\services\INormalUserServices.class
+com\onlinemarket\services\IGeneralServices.class
+com\onlinemarket\models\NormalUser.class

@@ -1,4 +1,10 @@
 package com.onlinemarket.models;
 
-public class StoreOwner extends User implements IUser {
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+
+@Entity(name = "storeowner")
+public class StoreOwner extends User {
+
 }

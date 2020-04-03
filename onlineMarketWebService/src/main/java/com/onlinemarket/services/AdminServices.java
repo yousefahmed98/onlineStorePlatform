@@ -1,31 +1,47 @@
 package com.onlinemarket.services;
 
 import java.util.List;
-import java.util.Vector;
-import com.onlinemarket.models.IUser;
+
+import com.onlinemarket.models.User;
 import com.onlinemarket.data.IUserDA;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestParam;
 
+@Service
+public class AdminServices implements  IAdminServices {
 
-public class AdminServices implements IGeneralService, IAdminService {
-
-  public IUserDA da;
-
-    public Vector  mySystemController;
-    public Vector  myIUserDA;
-
-  public List<IUser> findAll() {
-  return null;
-  }
-
-  public Boolean findUser(String email, String pass) {
-  return null;
-  }
+  @Autowired
+  IUserDA UserDA;
 
   @Override
-  public Boolean saveUser(IUser user) {
+  public Boolean findUser(String email, String pass) {
     return null;
   }
 
+  @Override
+  public Boolean saveUser(@RequestBody User user) {
+    boolean found = false;
+    user.setUserType("Admin");
+    Iterable<User> users = UserDA.findAll();
+    for(User user1 : users){
+      if ((user1.getEmail().equals(user.getEmail()))){
+        found = true;
+        break;
+      }
+    }
+    if(found == false){
+      UserDA.save(user);
+      return true;
+    }
+    else{
+      return false;
+    }
+  }
 
-
+  @Override
+  public Iterable<User> findAll() {
+    return UserDA.findAll();
+  }
 }

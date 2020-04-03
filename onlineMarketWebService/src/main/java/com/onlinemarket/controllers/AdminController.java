@@ -1,34 +1,46 @@
 package com.onlinemarket.controllers;
 
 import java.util.List;
-import java.util.Vector;
 
-import com.onlinemarket.models.IUser;
-import com.onlinemarket.services.IGeneralService;
-import com.onlinemarket.services.IAdminService;
+import com.onlinemarket.data.IUserDA;
+import com.onlinemarket.models.Admin;
+import com.onlinemarket.models.User;
+import com.onlinemarket.services.IAdminServices;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
+
 
 @RestController
 public class AdminController {
-  @Autowired
-  IGeneralService generalService;
-  @Autowired
-  IAdminService adminService;
 
-  @RequestMapping("/loginAdmin")
+  @Autowired
+  IAdminServices adminService;
+
+  @RequestMapping(value = "/loginAdmin",method = RequestMethod.GET)
   public Boolean login(String email, String pass) {
     return null;
   }
-  @RequestMapping("/registerAdmin")
-  public Boolean register(IUser user) {
-    return null;
+  @RequestMapping(value ="/registerAdmin",method = RequestMethod.POST)
+  public Boolean register(@RequestBody User user, @RequestParam String email) {
+    Iterable<User> users = adminService.findAll();
+    boolean isAdmin = false;
+    for (User user1 : users) {
+      if (user1.getEmail().equals(email) && user1.getUserType().equals("admin")) {
+        isAdmin = true;
+        break;
+      }
+    }
+    if (isAdmin == true) {
+      return adminService.saveUser(user);
+    }
+    else{
+      return false;
+    }
   }
-  @RequestMapping("/findAll")
-  public List<IUser> findAll() {
-  return null;
+  @RequestMapping(value = "/findAll",method = RequestMethod.GET)
+  public Iterable<User> findAll() {
+    return adminService.findAll();
   }
 
 

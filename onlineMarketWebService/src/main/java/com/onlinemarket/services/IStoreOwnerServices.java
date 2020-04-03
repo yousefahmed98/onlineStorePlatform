@@ -1,4 +1,7 @@
 package com.onlinemarket.services;
 
-public interface IStoreOwnerServices {
+import org.springframework.stereotype.Service;
+
+@Service
+public interface IStoreOwnerServices extends IGeneralServices{
 }
