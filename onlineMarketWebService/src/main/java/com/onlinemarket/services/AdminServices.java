@@ -20,7 +20,14 @@ public class AdminServices implements  IAdminServices {
 
   @Override
   public Boolean saveUser(User user) {
-    return null;
+    if(da.findById(user.getEmail()) != null)
+    {
+      da.save(user);
+      return true;
+    }
+    else{
+      return false;
+    }
   }
 
   @Override
