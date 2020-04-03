@@ -1,11 +1,13 @@
 package com.onlinemarket.services;
 
 import com.onlinemarket.models.User;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 
-public interface IAdminServices {
+@Service
+public interface IAdminServices extends IGeneralServices{
 
-  public List<User> findAll();
+  public Iterable<User> findAll();
 
 }

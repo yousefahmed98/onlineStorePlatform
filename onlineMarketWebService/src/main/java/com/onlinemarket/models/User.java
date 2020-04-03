@@ -1,21 +1,39 @@
 package com.onlinemarket.models;
 
-import javax.persistence.Entity;
-import javax.persistence.Id;
+import javax.persistence.*;
 
-@Entity
+
+@Entity(name = "user")
+@Inheritance(strategy = InheritanceType.JOINED)
 public class User {
-
   @Id
+  @GeneratedValue(strategy = GenerationType.AUTO)
+  @Column(name = "id", unique = true)
+  private int id;
+  @Column(name = "email")
   private String email;
-
-  private String password;
-
+  @Column(name = "name")
   private String name;
+  @Column(name = "password")
+  private String password;
+  @Column(name = "type")
+  private String userType;
 
-  private Integer age;
+  public void setUserType(String userType) {
+    this.userType = userType;
+  }
 
-  private Integer ID;
+  public String getUserType() {
+    return userType;
+  }
+
+  public void setId(int id) {
+    this.id = id;
+  }
+
+  public int getId() {
+    return id;
+  }
 
   public String getName() {
     return name;
@@ -23,22 +41,6 @@ public class User {
 
   public void setName(String name) {
     this.name = name;
-  }
-
-  public Integer getAge() {
-    return age;
-  }
-
-  public void setAge(Integer age) {
-    this.age = age;
-  }
-
-  public Integer getID() {
-    return ID;
-  }
-
-  public void setID(Integer ID) {
-    this.ID = ID;
   }
 
   public String getEmail() {
@@ -56,6 +58,4 @@ public class User {
   public void setPassword(String password) {
     this.password = password;
   }
-
-
 }

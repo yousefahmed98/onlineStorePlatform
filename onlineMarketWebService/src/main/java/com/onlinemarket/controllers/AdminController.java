@@ -2,8 +2,8 @@ package com.onlinemarket.controllers;
 
 import java.util.List;
 
+import com.onlinemarket.data.IUserDA;
 import com.onlinemarket.models.User;
-import com.onlinemarket.services.IGeneralServices;
 import com.onlinemarket.services.IAdminServices;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -11,10 +11,10 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
+
 @RestController
 public class AdminController {
-  @Autowired
-  IGeneralServices generalService;
+
   @Autowired
   IAdminServices adminService;
 
@@ -27,8 +27,8 @@ public class AdminController {
     return null;
   }
   @RequestMapping(value = "/findAll",method = RequestMethod.GET)
-  public List<User> findAll() {
-  return null;
+  public Iterable<User> findAll() {
+  return adminService.findAll();
   }
 
 

@@ -8,7 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 @Service
-public class AdminServices implements IGeneralServices, IAdminServices {
+public class AdminServices implements  IAdminServices {
 
   @Autowired
   IUserDA da;
@@ -23,9 +23,8 @@ public class AdminServices implements IGeneralServices, IAdminServices {
     return null;
   }
 
-
   @Override
-  public List<User> findAll() {
-    return null;
+  public Iterable<User> findAll() {
+    return da.findAll();
   }
 }

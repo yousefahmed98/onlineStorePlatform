@@ -1,6 +1,8 @@
 package com.onlinemarket.models;
 
+import javax.persistence.*;
 
-public class Admin extends User  {
+@Entity(name = "Admin")
+public class Admin extends User {
 
 }
