@@ -18,8 +18,16 @@ public class UserServices implements INormalUserServices {
 
   @Override
   public Boolean saveUser(User user){
-    if(UserDA.findById(user.getEmail()) != null)
-    {
+    boolean found = false;
+    user.setUserType("normalUser");
+    Iterable<User> users = UserDA.findAll();
+    for(User user1 : users){
+      if ((user1.getEmail().equals(user.getEmail()))){
+        found = true;
+        break;
+      }
+    }
+    if(found == false){
       UserDA.save(user);
       return true;
     }
@@ -27,5 +35,4 @@ public class UserServices implements INormalUserServices {
       return false;
     }
   }
-
 }

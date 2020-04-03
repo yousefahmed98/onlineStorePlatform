@@ -20,6 +20,6 @@ public class StoreOwnerController {
   }
   @RequestMapping(value = "/registerStoreOwner",method = RequestMethod.POST)
   public Boolean register(User user) {
-    return null;
+    return storeOwnerServices.saveUser(user);
   }
 }
