@@ -1,5 +1,6 @@
 package com.onlinemarket.controllers;
 
+import com.onlinemarket.models.NormalUser;
 import com.onlinemarket.models.User;
 import com.onlinemarket.services.INormalUserServices;
 import com.onlinemarket.services.IGeneralServices;
@@ -18,7 +19,7 @@ public class NormalUserController  {
 
   @RequestMapping(value = "/loginNormalUser",method = RequestMethod.GET)
   public Boolean login(@RequestBody String email,@RequestBody String pass) {
-    return normalUserService.findUser(email,pass);
+    return null;
   }
 
   @RequestMapping(value = "/registerNormalUser",method = RequestMethod.POST)

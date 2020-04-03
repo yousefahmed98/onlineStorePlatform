@@ -5,8 +5,6 @@ import com.onlinemarket.models.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import java.util.Optional;
-
 @Service
 public class UserServices implements INormalUserServices {
 
@@ -15,25 +13,21 @@ public class UserServices implements INormalUserServices {
 
   @Override
   public Boolean findUser(String email, String pass) {
-
-    if( UserDA.findById(email) != null){
-      User user=UserDA.findById(email).get();
-      if(user.getPassword().equals(pass)){
-      return true;
-      }
-      else{
-        return false;
-      }
-    }
-    else {
-      return false;
-    }
+    return null;
   }
 
   @Override
   public Boolean saveUser(User user){
-    if(UserDA.findById(user.getEmail()) != null)
-    {
+    boolean found = false;
+    user.setUserType("normalUser");
+    Iterable<User> users = UserDA.findAll();
+    for(User user1 : users){
+      if ((user1.getEmail().equals(user.getEmail()))){
+        found = true;
+        break;
+      }
+    }
+    if(found == false){
       UserDA.save(user);
       return true;
     }
@@ -41,5 +35,4 @@ public class UserServices implements INormalUserServices {
       return false;
     }
   }
-
 }
