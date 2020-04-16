@@ -9,17 +9,10 @@ import org.springframework.web.bind.annotation.RestController;
 
 
 @RestController
-public class StoreOwnerController {
+public class StoreOwnerController extends GeneralUserController {
 
   @Autowired
   IStoreOwnerServices storeOwnerServices;
 
-  @RequestMapping(value = "/loginStoreOwner",method = RequestMethod.GET)
-  public Boolean login(String email, String pass) {
-    return null;
-  }
-  @RequestMapping(value = "/registerStoreOwner",method = RequestMethod.POST)
-  public Boolean register(User user) {
-    return storeOwnerServices.saveUser(user);
-  }
+
 }

@@ -11,20 +11,13 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-public class NormalUserController  {
+public class NormalUserController extends GeneralUserController {
 
 
   @Autowired
   INormalUserServices normalUserService;
 
-  @RequestMapping(value = "/loginNormalUser",method = RequestMethod.GET)
-  public Boolean login(@RequestBody String email,@RequestBody String pass) {
-    return null;
-  }
 
-  @RequestMapping(value = "/registerNormalUser",method = RequestMethod.POST)
-  public Boolean register(@RequestBody User user) {
-    return normalUserService.saveUser(user);
-  }
+
 
 }
