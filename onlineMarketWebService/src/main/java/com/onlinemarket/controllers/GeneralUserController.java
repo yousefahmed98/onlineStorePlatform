@@ -3,19 +3,21 @@ package com.onlinemarket.controllers;
 import com.onlinemarket.models.User;
 import com.onlinemarket.services.IGeneralServices;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.security.access.prepost.PreAuthorize;
+import org.springframework.web.bind.annotation.*;
 
+@RestController
 public class GeneralUserController {
     @Autowired
-    private IGeneralServices generalServices;
+    IGeneralServices generalServices;
 
     @RequestMapping(value = "/login",method = RequestMethod.GET)
-    public Boolean login(String email, String pass) {
-        return null;
+    public Boolean login(@RequestParam String email,@RequestParam String pass) {
+        return generalServices.findUser(email, pass);
     }
-    @RequestMapping(value = "/register",method = RequestMethod.POST)
-    public Boolean register(User user) {
+
+    @PostMapping(value = "/register")
+    public Boolean register(@RequestBody User user) {
         return generalServices.saveUser(user);
     }
 }

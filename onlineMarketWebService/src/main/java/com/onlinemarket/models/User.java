@@ -1,6 +1,16 @@
 package com.onlinemarket.models;
 
+import com.onlinemarket.data.IUserDA;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.core.GrantedAuthority;
+import org.springframework.security.core.authority.SimpleGrantedAuthority;
+import org.springframework.security.core.userdetails.UserDetails;
+
 import javax.persistence.*;
+import java.util.Arrays;
+import java.util.Collection;
+import java.util.List;
+import java.util.stream.Collectors;
 
 
 @Entity(name = "user")
@@ -18,6 +28,17 @@ public class User {
   private String password;
   @Column(name = "type")
   private String userType;
+
+  public User (){
+  }
+
+  public User(User user){
+    this.id = user.id;
+    this.email = user.email;
+    this.name = user.name;
+    this.password = user.password;
+    this.userType = user.userType;
+  }
 
   public void setUserType(String userType) {
     this.userType = userType;
@@ -53,5 +74,9 @@ public class User {
 
   public void setPassword(String password) {
     this.password = password;
+  }
+
+  public String getPassword(){
+    return password;
   }
 }

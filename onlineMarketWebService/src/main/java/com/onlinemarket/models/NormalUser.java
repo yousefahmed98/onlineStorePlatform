@@ -11,6 +11,10 @@ public class NormalUser extends User {
     @Column(name = "phoneNo")
     public String phoneNo;
 
+    public NormalUser(User user) {
+        super(user);
+    }
+
     public String getAddress() {
         return address;
     }

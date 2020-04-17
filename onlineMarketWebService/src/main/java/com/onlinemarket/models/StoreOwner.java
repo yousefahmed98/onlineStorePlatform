@@ -7,4 +7,7 @@ import javax.persistence.Id;
 @Entity(name = "storeowner")
 public class StoreOwner extends User {
 
+    public StoreOwner(User user) {
+        super(user);
+    }
 }

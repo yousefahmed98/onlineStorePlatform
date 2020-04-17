@@ -12,8 +12,7 @@ import org.springframework.web.bind.annotation.*;
 
 
 @RestController
-public class AdminController extends GeneralUserController{
-
+public class AdminController{
   @Autowired
   IAdminServices adminService;
 
@@ -21,6 +20,4 @@ public class AdminController extends GeneralUserController{
   public Iterable<User> findAll() {
     return adminService.findAll();
   }
-
-
 }
